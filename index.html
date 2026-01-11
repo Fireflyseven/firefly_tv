@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefly TV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="node_modules/dplayer/dist/DPlayer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧播放器 -->
+        <div class="player-container">
+            <div id="dplayer"></div>
+        </div>
+        
+        <!-- 右侧内容 -->
+        <div class="right-panel">
+            <!-- 标题和时间栏 -->
+            <div class="header-bar">
+                <div class="logo">@西瓜TV</div>
+                <div id="current-time" class="time"></div>
+            </div>
+            <!-- 菜单栏 -->
+            <div class="menu-bar">
+                <button id="import-btn" class="menu-btn" title="导入m3u8节目">
+                    <i class="fas fa-file-import"></i>
+                </button>
+                <button id="play-url-btn" class="menu-btn" title="播放m3u8链接">
+                    <i class="fas fa-play-circle"></i>
+                </button>
+                <button id="change-source-btn" class="menu-btn" title="换源">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+                <button id="restore-default-btn" class="menu-btn" title="恢复默认列表">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+            
+            <!-- 节目列表 -->
+            <div class="channel-list">
+                <h3>节目列表</h3>
+                <div id="channel-groups">
+                    <!-- 节目分组将通过JS动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 导入m3u8文件的输入 -->
+    <input type="file" id="m3u8-file" accept=".m3u8,.m3u" style="display: none;">
+    
+    <!-- 播放m3u8链接的弹窗 -->
+    <div id="url-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>播放m3u8链接</h3>
+            <input type="text" id="m3u8-url" placeholder="请输入m3u8链接">
+            <button id="confirm-url">播放</button>
+        </div>
+    </div>
+    
+    <!-- 换源选择的弹窗 -->
+    <div id="source-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>选择播放源</h3>
+            <div id="source-list"></div>
+            <button id="cancel-source" class="cancel-btn">取消</button>
+        </div>
+    </div>
+    
+    <script src="js/main.js?v=1.2"></script>
+    <script>
+        // 测试脚本
+        console.log('测试脚本执行');
+        console.log('默认节目列表URL:', 'default.m3u');
+        
+        // 直接测试访问default.m3u
+        fetch('default.m3u?test=1')
+            .then(response => {
+                console.log('测试响应状态:', response.status);
+                return response.text();
+            })
+            .then(data => {
+                console.log('测试获取到数据，长度:', data.length);
+                console.log('测试数据前50个字符:', data.substring(0, 50));
+            })
+            .catch(error => {
+                console.error('测试访问失败:', error);
+            });
+    </script>
+</body>
+</html>

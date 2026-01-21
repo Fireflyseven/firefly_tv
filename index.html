@@ -3,95 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firefly TV</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/axios/dist/axios.min.js"></script>
-    <script src="node_modules/dplayer/dist/DPlayer.min.js"></script>
+    <title>网页电视机</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .tv-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+            height: 100vh;
+        }
+
+        .tv-header {
+            text-align: center;
+            margin-bottom: 20px;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .tv-header h1 {
+            color: #ff6b35;
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .tv-main {
+            grid-column: 2;
+            grid-row: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .channel-list-container {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 140px); /* 固定高度，减去标题和边距 */
+        }
+        
+        .channel-list {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 15px;
+            overflow-y: auto;
+            height: 100%; /* 填充整个容器高度 */
+            /* 隐藏滚动条但保留滚动功能 */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        /* 隐藏WebKit浏览器的滚动条 */
+        .channel-list::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 针对其他可能的滚动区域 */
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+        
+        /* Firefox */
+        * {
+            scrollbar-width: none;
+        }
+
+        .channel-group h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        
+        .channel-list-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .channel-list {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 15px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .channel {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #2d2d2d;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .channel:hover {
+            background-color: #4CAF50;
+            transform: translateX(5px);
+        }
+
+        .channel.active {
+            background-color: #ff6b35;
+        }
+
+        .channel-name {
+            font-weight: bold;
+        }
+
+        .tv-screen {
+            background-color: #000;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-player {
+            width: 100%;
+            height: 70vh;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .channel-info {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        #current-channel {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        #channel-url {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+            word-break: break-all;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .control-btn {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .control-btn:hover {
+            background-color: #45a049;
+        }
+
+        .control-btn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            border: 1px solid #555;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+
+        #search-input::placeholder {
+            color: #888;
+        }
+
+        @media (max-width: 1024px) {
+            .tv-main {
+                grid-template-columns: 1fr;
+            }
+
+            .channel-list {
+                height: 300px;
+            }
+
+            .video-player {
+                height: 50vh;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 左侧播放器 -->
-        <div class="player-container">
-            <div id="dplayer"></div>
+    <div class="tv-container">
+        <div class="tv-header">
+            <h1>📺 网页电视机</h1>
         </div>
-        
-        <!-- 右侧内容 -->
-        <div class="right-panel">
-            <!-- 标题和时间栏 -->
-            <div class="header-bar">
-                <div class="logo">@西瓜TV</div>
-                <div id="current-time" class="time"></div>
-            </div>
-            <!-- 菜单栏 -->
-            <div class="menu-bar">
-                <button id="import-btn" class="menu-btn" title="导入m3u8节目">
-                    <i class="fas fa-file-import"></i>
-                </button>
-                <button id="play-url-btn" class="menu-btn" title="播放m3u8链接">
-                    <i class="fas fa-play-circle"></i>
-                </button>
-                <button id="change-source-btn" class="menu-btn" title="换源">
-                    <i class="fas fa-sync-alt"></i>
-                </button>
-                <button id="restore-default-btn" class="menu-btn" title="恢复默认列表">
-                    <i class="fas fa-redo"></i>
-                </button>
-            </div>
-            
-            <!-- 节目列表 -->
+        <div class="channel-list-container">
             <div class="channel-list">
-                <h3>节目列表</h3>
-                <div id="channel-groups">
-                    <!-- 节目分组将通过JS动态生成 -->
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索频道...">
+                </div>
+                <div id="channels-container">
+                    <!-- 频道列表将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </div>
+        <div class="tv-main">
+            <div class="tv-screen">
+                <div class="video-player">
+                    <iframe id="tv-video" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="channel-info">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div id="current-channel">请选择一个频道</div>
+                        <div class="source-selector" id="source-selector-container">
+                            <label for="source-selector" style="margin-right: 5px;">切换源：</label>
+                            <select id="source-selector" onchange="changeSource()" style="padding: 5px; background-color: #333; color: white; border: 1px solid #555; border-radius: 3px;"></select>
+                        </div>
+                    </div>
+                    <div id="channel-url"></div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- 导入m3u8文件的输入 -->
-    <input type="file" id="m3u8-file" accept=".m3u8,.m3u" style="display: none;">
-    
-    <!-- 播放m3u8链接的弹窗 -->
-    <div id="url-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>播放m3u8链接</h3>
-            <input type="text" id="m3u8-url" placeholder="请输入m3u8链接">
-            <button id="confirm-url">播放</button>
-        </div>
-    </div>
-    
-    <!-- 换源选择的弹窗 -->
-    <div id="source-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>选择播放源</h3>
-            <div id="source-list"></div>
-            <button id="cancel-source" class="cancel-btn">取消</button>
-        </div>
-    </div>
-    
-    <script src="js/main.js?v=1.2"></script>
+
     <script>
-        // 测试脚本
-        console.log('测试脚本执行');
-        console.log('默认节目列表URL:', 'default.m3u');
-        
-        // 直接测试访问default.m3u
-        fetch('default.m3u?test=1')
-            .then(response => {
-                console.log('测试响应状态:', response.status);
-                return response.text();
-            })
-            .then(data => {
-                console.log('测试获取到数据，长度:', data.length);
-                console.log('测试数据前50个字符:', data.substring(0, 50));
-            })
-            .catch(error => {
-                console.error('测试访问失败:', error);
+        let channelsData = {};
+        let currentChannel = null;
+        let currentGroup = null;
+        let iframe = null;
+
+        // 解析M3U文件内容，相同节目合并在一起
+        function parseM3U(content) {
+            const lines = content.split('\n');
+            const channelsMap = new Map(); // 用于合并相同名称的频道
+            let currentGroup = '';
+            let currentChannel = '';
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line.startsWith('#EXTINF:')) {
+                    const groupMatch = line.match(/group-title="([^"]+)"/);
+                    const nameMatch = line.match(/,(.*)$/);
+                    if (groupMatch && nameMatch) {
+                        currentGroup = groupMatch[1];
+                        currentChannel = nameMatch[1];
+                    }
+                } else if (line && !line.startsWith('#')) {
+                    if (currentGroup && currentChannel) {
+                        // 合并相同名称的频道
+                        if (channelsMap.has(currentChannel)) {
+                            // 频道已存在，添加新的源
+                            const existing = channelsMap.get(currentChannel);
+                            existing.sources.push({
+                                group: currentGroup,
+                                url: line
+                            });
+                        } else {
+                            // 新频道
+                            channelsMap.set(currentChannel, {
+                                name: currentChannel,
+                                sources: [{
+                                    group: currentGroup,
+                                    url: line
+                                }]
+                            });
+                        }
+                    }
+                }
+            }
+            
+            // 将Map转换为按原组分类的结构
+            const groupedChannels = {};
+            channelsMap.forEach(channel => {
+                // 使用第一个源的组作为频道组
+                const primaryGroup = channel.sources[0].group;
+                if (!groupedChannels[primaryGroup]) {
+                    groupedChannels[primaryGroup] = [];
+                }
+                groupedChannels[primaryGroup].push(channel);
             });
+            
+            return groupedChannels;
+        }
+
+        // 从本地jx.m3u文件加载频道
+        function loadChannelsFromM3U() {
+            try {
+                // 使用fetch API读取本地文件（需要HTTP服务器）
+                fetch('jx.m3u')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('无法加载jx.m3u文件');
+                        }
+                        return response.text();
+                    })
+                    .then(content => {
+                        channelsData = parseM3U(content);
+                        renderChannels();
+                        
+                        // 开机默认播放第一个节目
+                        setTimeout(() => {
+                            const firstChannel = document.querySelector('#channels-container .channel');
+                            if (firstChannel) {
+                                firstChannel.click();
+                            }
+                        }, 100); // 延迟一下确保DOM已渲染完成
+                    })
+                    .catch(error => {
+                        console.error('Error loading channels from M3U:', error);
+                        document.getElementById('channels-container').innerHTML = '<p style="color: red;">无法加载频道列表，请检查jx.m3u文件</p>';
+                    });
+            } catch (error) {
+                console.error('Error loading channels:', error);
+                document.getElementById('channels-container').innerHTML = '<p style="color: red;">无法加载频道列表，请检查jx.m3u文件</p>';
+            }
+        }
+
+        // 渲染频道列表
+        function renderChannels() {
+            const container = document.getElementById('channels-container');
+            container.innerHTML = '';
+
+            Object.keys(channelsData).forEach(group => {
+                const groupDiv = document.createElement('div');
+                groupDiv.className = 'channel-group';
+                groupDiv.innerHTML = `<h3>${group}</h3>`;
+
+                const groupChannels = channelsData[group];
+                groupChannels.forEach((channel, index) => {
+                    const channelDiv = document.createElement('div');
+                    channelDiv.className = 'channel';
+                    channelDiv.innerHTML = `
+                        <span class="channel-name">${channel.name}</span>
+                        <span style="font-size: 0.8em; color: #888;">${index + 1}</span>
+                    `;
+                    channelDiv.onclick = () => playChannel(channel, group);
+                    groupDiv.appendChild(channelDiv);
+                });
+
+                container.appendChild(groupDiv);
+            });
+        }
+
+        // 播放频道
+        function playChannel(channel, group, sourceIndex = 0) {
+            // 移除之前的active类
+            document.querySelectorAll('.channel').forEach(c => c.classList.remove('active'));
+            // 添加active类到当前频道
+            event.target.closest('.channel').classList.add('active');
+
+            // 使用iframe播放视频，避免CORS问题
+            const source = channel.sources[sourceIndex];
+            iframe.src = source.url;
+
+            currentChannel = channel;
+            currentGroup = group;
+            
+            // 更新频道信息
+            document.getElementById('current-channel').textContent = `${group} - ${channel.name}`;
+            document.getElementById('channel-url').textContent = source.url;
+            
+            // 更新换源下拉框
+            updateSourceSelector(channel, sourceIndex);
+        }
+        
+        // 更新换源下拉框
+        function updateSourceSelector(channel, selectedIndex = 0) {
+            const sourceSelector = document.getElementById('source-selector');
+            const sourceSelectorContainer = document.getElementById('source-selector-container');
+            sourceSelector.innerHTML = '';
+            
+            // 添加选项
+            channel.sources.forEach((source, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `源${index + 1} - ${source.group}`;
+                if (index === selectedIndex) {
+                    option.selected = true;
+                }
+                sourceSelector.appendChild(option);
+            });
+            
+            // 显示或隐藏整个切换源容器（包括标签和下拉框）
+            if (channel.sources.length > 1) {
+                sourceSelectorContainer.style.display = 'flex';
+                sourceSelector.style.display = 'inline-block';
+            } else {
+                sourceSelectorContainer.style.display = 'none';
+                sourceSelector.style.display = 'none';
+            }
+        }
+        
+        // 切换视频源
+        function changeSource() {
+            if (currentChannel) {
+                const sourceSelector = document.getElementById('source-selector');
+                const selectedIndex = parseInt(sourceSelector.value);
+                const source = currentChannel.sources[selectedIndex];
+                
+                // 直接更新iframe源，确保切换生效
+                iframe.src = source.url;
+                
+                // 更新当前源信息
+                document.getElementById('channel-url').textContent = source.url;
+            }
+        }
+
+
+
+        // 搜索功能
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const allChannels = document.querySelectorAll('.channel');
+
+            allChannels.forEach(channel => {
+                const channelName = channel.querySelector('.channel-name').textContent.toLowerCase();
+                if (channelName.includes(searchTerm)) {
+                    channel.style.display = 'flex';
+                } else {
+                    channel.style.display = 'none';
+                }
+            });
+
+            // 显示/隐藏分组标题
+            const groups = document.querySelectorAll('.channel-group');
+            groups.forEach(group => {
+                const visibleChannels = group.querySelectorAll('.channel[style="display: flex;"]');
+                if (visibleChannels.length > 0 || searchTerm === '') {
+                    group.style.display = 'block';
+                } else {
+                    group.style.display = 'none';
+                }
+            });
+        });
+
+        // 页面加载完成后加载频道
+        window.addEventListener('DOMContentLoaded', function() {
+            loadChannelsFromM3U();
+            iframe = document.getElementById('tv-video');
+        });
     </script>
 </body>
 </html>

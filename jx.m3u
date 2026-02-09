@@ -1,8 +1,8 @@
 #EXTM3U
 #EXTINF:-1 group-title="央视",CCTV1
-http://39.135.140.104:6610/PLTV/88888888/224/3221225618/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视",CCTV1
 http://39.135.140.104:6610/PLTV/88888888/224/3221226225/1/index.m3u8?fmt=ts2hls
+#EXTINF:-1 group-title="央视",CCTV1
+http://39.135.140.104:6610/PLTV/88888888/224/3221225618/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视",CCTV1
 http://39.135.140.104:6610/PLTV/88888888/224/3221225501/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视",CCTV1

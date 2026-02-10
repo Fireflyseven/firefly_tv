@@ -25,9 +25,9 @@ http://39.135.140.104:6610/PLTV/88888888/224/3221226256/2/index.m3u8?fmt=ts2hls
 http://39.135.140.104:6610/PLTV/88888888/224/3221225634/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视",CCTV4
 http://39.135.140.104:6610/PLTV/88888888/224/3221225621/2/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视",CCTV4 欧洲
+#EXTINF:-1 group-title="央视",CCTV4欧洲
 http://39.135.140.104:6610/PLTV/88888888/224/3221226361/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视",CCTV4 美洲
+#EXTINF:-1 group-title="央视",CCTV4美洲
 http://39.135.140.104:6610/PLTV/88888888/224/3221226366/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视",CCTV5
 http://39.135.140.104:6610/PLTV/88888888/224/3221225633/2/index.m3u8?fmt=ts2hls
@@ -157,11 +157,11 @@ http://39.135.140.104:6610/PLTV/88888888/224/3221226369/2/index.m3u8?fmt=ts2hls
 http://39.135.140.104:6610/PLTV/88888888/224/3221226347/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视",CGTN
 http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225747/index.m3u8
-#EXTINF:-1 group-title="央视",CGTN Documentary
+#EXTINF:-1 group-title="央视",CGTN纪录
 http://39.135.140.104:6610/PLTV/88888888/224/3221225645/2/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视",CGTN Documentary
+#EXTINF:-1 group-title="央视",CGTN纪录
 http://39.135.140.104:6610/PLTV/88888888/224/3221226260/2/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视",CGTN Documentary
+#EXTINF:-1 group-title="央视",CGTN纪录
 http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225645/index.m3u8
 #EXTINF:-1 group-title="央视",CGTN俄语
 http://39.135.140.104:6610/PLTV/88888888/224/3221226282/2/index.m3u8?fmt=ts2hls
@@ -201,9 +201,9 @@ http://39.135.140.104:6610/PLTV/88888888/224/3221226194/2/index.m3u8?fmt=ts2hls
 http://39.135.140.104:6610/PLTV/88888888/224/3221225615/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="江西",江西移动电视
 http://39.135.140.104:6610/PLTV/88888888/224/3221226427/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="江西",江西教育台
+#EXTINF:-1 group-title="江西",江西教育
 http://39.135.140.104:6610/PLTV/88888888/224/3221226197/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="江西",江西教育台
+#EXTINF:-1 group-title="江西",江西教育
 http://39.135.140.104:6610/PLTV/88888888/224/3221226410/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="江西",陶瓷
 http://39.135.140.104:6610/PLTV/88888888/224/3221226304/2/index.m3u8?fmt=ts2hls
@@ -397,8 +397,6 @@ http://39.135.140.104:6610/PLTV/88888888/224/3221225546/2/index.m3u8?fmt=ts2hls
 http://39.135.140.104:6610/PLTV/88888888/224/3221225719/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="卫视",山东教育卫视
 http://39.135.140.104:6610/PLTV/88888888/224/3221226353/2/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="卫视",山东教育卫视
-https://test1.live.sdetv.com.cn/live/dianshizhibo/playlist.m3u8
 #EXTINF:-1 group-title="卫视",兵团卫视
 http://39.135.140.104:6610/PLTV/88888888/224/3221226395/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="卫视",兵团卫视
@@ -627,9 +625,9 @@ http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226256/2/index.
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221225634/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视IPV6",CCTV4
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221225621/2/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视IPV6",CCTV4 欧洲
+#EXTINF:-1 group-title="央视IPV6",CCTV4欧洲
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226361/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视IPV6",CCTV4 美洲
+#EXTINF:-1 group-title="央视IPV6",CCTV4美洲
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226366/1/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视IPV6",CCTV5
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221225633/2/index.m3u8?fmt=ts2hls
@@ -757,9 +755,9 @@ http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221225747/2/index.
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226369/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视IPV6",CGTN
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226347/2/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视IPV6",CGTN Documentary
+#EXTINF:-1 group-title="央视IPV6",CGTN纪录
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221225645/2/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="央视IPV6",CGTN Documentary
+#EXTINF:-1 group-title="央视IPV6",CGTN纪录
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226260/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="央视IPV6",CGTN俄语
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226282/2/index.m3u8?fmt=ts2hls
@@ -789,9 +787,9 @@ http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226194/2/index.
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221225615/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="江西IPV6",江西移动电视
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226427/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="江西IPV6",江西教育台
+#EXTINF:-1 group-title="江西IPV6",江西教育
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226197/1/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="江西IPV6",江西教育台
+#EXTINF:-1 group-title="江西IPV6",江西教育
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226410/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="江西IPV6",陶瓷
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226304/2/index.m3u8?fmt=ts2hls
@@ -1163,76 +1161,76 @@ http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226391/2/index.
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221225653/2/index.m3u8?fmt=ts2hls
 #EXTINF:-1 group-title="数字IPV6",哒波电竞
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226265/2/index.m3u8?fmt=ts2hls
-#EXTINF:-1 group-title="其他",翡翠台
-http://php.jdshipin.com:8880/smt.php?id=jade_twn
-#EXTINF:-1 group-title="其他",翡翠台
-https://cdn.163189.xyz/live/fct4k/stream.m3u8
-#EXTINF:-1 group-title="其他",翡翠台
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
-#EXTINF:-1 group-title="其他",明珠台
-http://php.jdshipin.com/TVOD/iptv.php?id=mzt2
-#EXTINF:-1 group-title="其他",无线新闻台
-http://v2hcdn.jdshipin.com/news/news.stream/chunklist_w1005.m3u8
-#EXTINF:-1 group-title="其他",无线新闻台
-http://php.jdshipin.com:8880/smt.php?id=inews_twn
-#EXTINF:-1 group-title="其他",TVB Plus
-https://cdn.163189.xyz/live/tvbp/stream.m3u8
-#EXTINF:-1 group-title="其他",TVB Plus
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=j2
-#EXTINF:-1 group-title="其他",TVB星河
-http://php.jdshipin.com:8880/PLTV/iptv.php?id=xinghe
-#EXTINF:-1 group-title="其他",ViuTV
-http://php.jdshipin.com/TVOD/iptv.php?id=viutv2
-#EXTINF:-1 group-title="其他",NHK WORLD
-https://master.nhkworld.jp/nhkworld-tv/playlist/live.m3u8
-#EXTINF:-1 group-title="其他",NHK G
+#EXTINF:-1 group-title="测试",NHK G
 http://103.197.59.108:5002/gd01.m3u8?token=guoziyun&amp;gid=gd01&amp;channel=zhongying
-#EXTINF:-1 group-title="其他",NHK G
-http://vthanh.utako.moe/NHK_G/index.m3u8
-#EXTINF:-1 group-title="其他",NHK G
+#EXTINF:-1 group-title="测试",NHK G
 https://nhk4.mov3.co/hls/nhk.m3u8
-#EXTINF:-1 group-title="其他",NHK E
+#EXTINF:-1 group-title="测试",NHK E
 http://103.197.59.108:5002/gd02.m3u8?token=guoziyun&amp;gid=gd01&amp;channel=zhongying
-#EXTINF:-1 group-title="其他",NHK E
-http://vthanh.utako.moe/NHK_E/index.m3u8
-#EXTINF:-1 group-title="其他",日本电视台
+#EXTINF:-1 group-title="测试",日本电视台
 http://103.197.59.108:5002/gd03.m3u8?token=guoziyun&amp;gid=gd01&amp;channel=zhongying
-#EXTINF:-1 group-title="其他",日本电视台
-http://vthanh.utako.moe/Nippon_TV/index.m3u8
-#EXTINF:-1 group-title="其他",日本电视台
+#EXTINF:-1 group-title="测试",日本电视台
 https://ntv4.mov3.co/hls/ntv.m3u8
-#EXTINF:-1 group-title="其他",TBS
-http://vthanh.utako.moe/TBS/index.m3u8
-#EXTINF:-1 group-title="其他",TBS
+#EXTINF:-1 group-title="测试",TBS
 http://103.197.59.108:5002/gd04.m3u8?token=guoziyun&amp;gid=gd01&amp;channel=zhongying
-#EXTINF:-1 group-title="其他",富士电视台
+#EXTINF:-1 group-title="测试",富士电视台
 http://103.197.59.108:5002/gd05.m3u8?token=guoziyun&amp;gid=gd01&amp;channel=zhongying
-#EXTINF:-1 group-title="其他",富士电视台
-http://vthanh.utako.moe/Fuji_TV/index.m3u8
-#EXTINF:-1 group-title="其他",朝日电视台
+#EXTINF:-1 group-title="测试",朝日电视台
 http://103.197.59.108:5002/gd06.m3u8?token=guoziyun&amp;gid=gd01&amp;channel=zhongying
-#EXTINF:-1 group-title="其他",朝日电视台
-http://vthanh.utako.moe/TV_Asahi/index.m3u8
-#EXTINF:-1 group-title="其他",东京电视台
+#EXTINF:-1 group-title="测试",东京电视台
 http://103.197.59.108:5002/gd07.m3u8?token=guoziyun&amp;gid=gd01&amp;channel=zhongying
-#EXTINF:-1 group-title="其他",东京电视台
-http://vthanh.utako.moe/TV_Tokyo/index.m3u8
-#EXTINF:-1 group-title="其他",TokyoMX1
+#EXTINF:-1 group-title="测试",TokyoMX1
 http://103.197.59.108:5002/gd08.m3u8?token=guoziyun&amp;gid=gd01&amp;channel=zhongying
-#EXTINF:-1 group-title="其他",Animax
-http://vthanh.utako.moe/Animax/index.m3u8
-#EXTINF:-1 group-title="其他",読売テレビ
-http://vthanh.utako.moe/ytv/index.m3u8
-#EXTINF:-1 group-title="其他",NHK BS
-http://vthanh.utako.moe/NHK_BS/index.m3u8
-#EXTINF:-1 group-title="其他",WOWOWシネマ
-https://stream02.willfonk.com/live_playlist.m3u8?cid=BS193&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
-#EXTINF:-1 group-title="其他",WOWOWプライム
-https://stream02.willfonk.com/live_playlist.m3u8?cid=BS191&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
-#EXTINF:-1 group-title="其他",WOWOWライブ
-https://stream02.willfonk.com/live_playlist.m3u8?cid=BS192&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
-#EXTINF:-1 group-title="测试",中天新闻
-http://222.128.55.152:9080/live/fc.m3u8
+#EXTINF:-1 group-title="测试",广东珠江
+http://r.jdshipin.com/sE5vO
+#EXTINF:-1 group-title="测试",广州综合台
+http://dxa.yiandrive.com:39319/gztv/zhonghe
+#EXTINF:-1 group-title="测试",广州新闻
+http://dxa.yiandrive.com:39319/gztv/xinwen
+#EXTINF:-1 group-title="测试",广州法治
+http://dxa.yiandrive.com:39319/gztv/fazhi
+#EXTINF:-1 group-title="测试",面包台
+https://video.bread-tv.com:8091/hls-live24/online/index.m3u8
+#EXTINF:-1 group-title="测试",翡翠台
+https://mytv.cdn.loc.cc/o12.php?id=fct
+#EXTINF:-1 group-title="测试",翡翠台
+https://cdn6.163189.xyz/163189/fct4k
+#EXTINF:-1 group-title="测试",明珠台
+https://mytv.cdn.loc.cc/o12.php?id=mzt
+#EXTINF:-1 group-title="测试",TVB Plus
+http://r.jdshipin.com/ndGgS
+#EXTINF:-1 group-title="测试",無綫新聞台
+http://r.jdshipin.com/CkuBd
+#EXTINF:-1 group-title="测试",Now新聞台
+https://yang-1989.eu.org/live/now-332
+#EXTINF:-1 group-title="测试",Now財經台
+https://yang-1989.eu.org/live/now-333
+#EXTINF:-1 group-title="测试",Now Sports 精選
+https://yang-1989.eu.org/live/now-630
+#EXTINF:-1 group-title="测试",ViuTV
+https://yang-1989.eu.org/live/ViuTV
+#EXTINF:-1 group-title="测试",ViuTVsix
+https://yang-1989.eu.org/live/ViuTVsix
+#EXTINF:-1 group-title="测试",BBC Earth
+https://hls.iill.top/api/BBC-Earth/index.m3u8
+#EXTINF:-1 group-title="测试",BBC Lifestyle
+https://hls.iill.top/api/BBC-Lifestyle/index.m3u8
+#EXTINF:-1 group-title="测试",Discovery HD
+https://hls.iill.top/api/Discovery/index.m3u8
+#EXTINF:-1 group-title="测试",動物星球
+https://hls.iill.top/api/dwxq/index.m3u8
+#EXTINF:-1 group-title="测试",緯來日本台
+https://hls.iill.top/api/wlrb/index.m3u8
+#EXTINF:-1 group-title="测试",緯來體育台
+https://hls.iill.top/api/wlty/index.m3u8
+#EXTINF:-1 group-title="测试",緯來電影台
+https://hls.iill.top/api/wldy/index.m3u8
+#EXTINF:-1 group-title="测试",東森電影台
+https://hls.iill.top/api/dsdy/index.m3u8
+#EXTINF:-1 group-title="测试",東森洋片台
+https://hls.iill.top/api/dsyp/index.m3u8
+#EXTINF:-1 group-title="测试",LS Time電影台
+https://hls.iill.top/api/lxsd/index.m3u8
 #EXTINF:-1 group-title="测试",台视新闻
 http://38.64.72.148/hls/modn/list/4013/playlist.m3u8
 #EXTINF:-1 group-title="测试",TVBS亚洲
